@@ -1,4 +1,3 @@
-
 //scrill animation
 $(function() {
 	$('.animate').scrolla({

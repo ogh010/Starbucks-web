@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins','Gothic A1';
     border:0;
 }
 /*section->main*/
@@ -34,18 +34,32 @@ header .logo{
 header ul {
     position: relative;
     display: flex;
+    
 }
 header ul li {
     list-style: none;
-    
+    position: relative; 
+    width: 130px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(199, 199, 199, 0.24);
 }
+
 header ul li a{
     display: inline-block;
     color: #333;
     font-weight: 400;
     text-decoration: none;
-    margin-left: 40px;
+    
+    
+    
 }
+
+header ul li .submenu{position: absolute; width: 100%; left: 0; top: 44px; display: none; z-index: 99;}
+header ul li .submenu li{background: rgba(42, 42, 42, 0.88);}
+header ul li .submenu li a{ color: #fff; font-size: 12px }
+header ul li .submenu li:hover{background-color: rgba(255, 255, 255, 0.88);}
+header ul li .submenu li:hover a{ color: #000}
 .content{
     position: relative;
     width: 100%;
@@ -81,7 +95,10 @@ header ul li a{
     font-weight: 500;
     letter-spacing: 1pz;
     text-decoration: none;
+    transition: 0.4s
 }
+.content a:hover{background: #000000;
+    color: #fff;}
 
 .content .imgBox{
     width: 600px;
@@ -101,6 +118,7 @@ header ul li a{
     transform: translateX(-50%);
     display: flex;
 }
+.thumb div{}
 .thumb li{
     list-style: none;
     display: inline-block;
@@ -109,7 +127,30 @@ header ul li a{
     transition: 0.5s;
 }
 .thumb li:hover{
-    transform: translateY(-15px)
+    animation-play-state: paused
+}
+.thumb li:nth-child(1){
+    animation-name: thumbAni;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+}
+.thumb li:nth-child(2){
+    animation-name: thumbAni;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+}
+.thumb li:nth-child(3){
+    animation-name: thumbAni;
+    animation-duration: 1s;
+    animation-delay: 1.6s;
+    animation-iteration-count: infinite;
+}
+@keyframes thumbAni{
+    50%{transform: translateY(-15px)}
+    100%{transform: translateY(0px)}
+    
 }
 .thumb li img{
     max-width: 60px;
@@ -173,8 +214,10 @@ input[id="tab02"]:checked ~ .con2 {display:block;}
     letter-spacing: 1pz;
     text-decoration: none;
     margin-left: 10px;
-    font-size: 14px
+    font-size: 14px;
+    transition: 0.4s
 }
+.con1 a:hover{background: #000000;}
 .inner1 .gift {
     margin: 20px 10px 0 10px 
 }
@@ -191,7 +234,7 @@ input[id="tab02"]:checked ~ .con2 {display:block;}
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fffff8;
+    height:573px; background-image:url('https://image.istarbucks.co.kr/img/event/2021/2021_summer2_bean_bg.jpg'); background-position:center; background-size:cover;
 }
 .bean .inner{
     position: relative;
@@ -207,12 +250,12 @@ input[id="tab02"]:checked ~ .con2 {display:block;}
 }
 .bean .inner .right a{
     position: absolute;
-    left: 50%;
+    left: 17%;
     transform: translate(-70%);
     display: inline-block;
     margin: 20px ;
     padding: 8px 20px;
-    background: #fff;
+    background: transparent;
     color: #888;
     border-radius: 10px;
     font-weight: 500;
@@ -242,12 +285,34 @@ input[id="tab02"]:checked ~ .con2 {display:block;}
     animation-name: slid-right; 
     animation-duration: 2.5s;
 }
+/*
 .reserve{
     background: url(img/reserve_hawaii_beans.jpg)no-repeat;
     width: 100%;
-    min-height: 400px;
+    min-height: 450px;
     background-size: cover;
+    background-position: center bottom
 }
+*/
+.reserve1{width: 100%; background-image: url(img/fav_prod_bg_new.jpg); height: 700px; background-size: cover; background-position: center; background-attachment: fixed}
+.reserve1 .reserve1Inner{display: flex; justify-content: space-between; width: 100%; height: 100%; }
+.reserve1 .reserve1Inner .reserve1L{width: 45%;  height: 100%; color: #fff; padding: 80px; position: relative}
+
+.reserve1 .reserve1Inner .reserve1L span:nth-child(1){display: block; color: #fff; font-size: 96px; text-align: right; font-weight: 600; margin-bottom: -0.4em}
+.reserve1 .reserve1Inner .reserve1L span:nth-child(2){display: block; color: #fff; font-size: 86px; text-align: right;font-weight: 600; margin-bottom: -0.4em}
+.reserve1 .reserve1Inner .reserve1L span:nth-child(3){display: block; color: #fff; font-size: 50px; text-align: right;font-weight: 600}
+.reserve1 .reserve1Inner .reserve1L p, 
+.reserve1 .reserve1Inner .reserve1L span{text-align: right; display: block;} 
+.reserve1 .reserve1Inner .reserve1L p{font-size: 24px; font-weight: 600}
+.reserve1 .reserve1Inner .reserve1L span{font-size: 16px}
+.reserve1 .reserve1Inner .reserve1L button{border: 2px solid #fff; padding: 10px 30px; font-size: 14px; background-color: transparent; border-radius: 30px; color: #fff; position: absolute; right: 80px; margin: 10px 0; margin: 20px 0px ;padding: 8px 20px;
+    background: transparent;  border-radius: 10px; font-weight: 500; text-decoration: none; border: 1px solid #fff; cursor: pointer}
+.reserve1 .reserve1Inner .reserve1L button:hover{background: #fff;
+    transition: 1.5s;
+    color: #000;
+    text-decoration:underline;}
+.reserve1 .reserve1Inner .reserve1R{width: 55%; height: 100%; position: relative}
+.reserve1 .reserve1Inner .reserve1R .stImg{background-image: url(img/2021_summer2_fav.png); width: 80%; height:80%; background-size: contain; background-position: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background-repeat: no-repeat}
 
 .reserve2 .inner .left.motion{
     animation-name: slid-left; 
@@ -351,4 +416,7 @@ input[id="tab02"]:checked ~ .con2 {display:block;}
     transform: translateX(-50%);
     line-height: 3em
 }
-
+.footer .last p:last-child{
+    color: #717171;
+    font-size: 13px
+}
